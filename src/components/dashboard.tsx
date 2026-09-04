@@ -80,7 +80,18 @@ export default function Dashboard({ data }: { data: Data }) {
           <p className="eyebrow">POSTHOG · GITHUB</p>
           <h1 id="page-title">Engineering impact,<br /><em>measured over time</em></h1>
         </div>
-        <p className="thesis"><strong>What the score means:</strong> a relative ranking of shipped outcomes, risk reduction, team leverage, sustained ownership, and code that remains in production. It is a decision aid—not a performance review.</p>
+        <div className="top-explainer">
+          <p className="explainer-title">How to read this score</p>
+          <p className="thesis"><strong>Impact means work that shipped, mattered, helped others, and lasted.</strong> Merged PRs become weekly product arcs; current production lines become age-weighted monthly episodes.</p>
+          <div className="score-recipe" aria-label="Impact score weights">
+            <span><b>25%</b> outcomes</span>
+            <span><b>20%</b> risk</span>
+            <span><b>15%</b> leverage</span>
+            <span><b>15%</b> ownership</span>
+            <span><b>25%</b> durability</span>
+          </div>
+          <p className="percentile-note">Each signal is ranked across {data.coverage.engineersScored} engineers, then weighted. A score of 100 means highest in this 91-day comparison—not “perfect” performance or 100 units of impact.</p>
+        </div>
       </section>
 
       <section className="workspace">
