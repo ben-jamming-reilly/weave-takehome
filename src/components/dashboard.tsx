@@ -47,6 +47,12 @@ function narrative(leader: Leader) {
   return `${strongest.label} is the clearest signal: ${leader.dimensions[strongest.key]}th percentile. ${leader.name.split(" ")[0]} sustained work in ${scope.scope} across ${scope.weeks} of 14 weeks; ${leader.durabilityEvidence.survivingLines.toLocaleString()} sampled lines remain at HEAD.`;
 }
 
+function durabilityExample(leader: Leader) {
+  const episode = leader.durabilityEvidence.topEpisodes[0];
+  if (!episode) return null;
+  return `${episode.month} · ${episode.scope}: ${episode.lines.toLocaleString()} surviving lines accumulated ${episode.lineMonths.toLocaleString()} line-months. √${episode.lineMonths.toLocaleString()} = ${episode.durabilityUnits} episode points.`;
+}
+
 export default function Dashboard({ data }: { data: Data }) {
   const [selected, setSelected] = useState(0);
   const [methodOpen, setMethodOpen] = useState(false);
@@ -72,9 +78,9 @@ export default function Dashboard({ data }: { data: Data }) {
       <section className="intro" aria-labelledby="page-title">
         <div>
           <p className="eyebrow">POSTHOG · GITHUB</p>
-          <h1 id="page-title">Who moved the work<br /><em>that mattered?</em></h1>
+          <h1 id="page-title">Engineering impact,<br /><em>measured over time</em></h1>
         </div>
-        <p className="thesis">Impact is shipped work that keeps creating value. PR outcomes are grouped into product arcs; surviving code earns more credit for every month it remains at HEAD.</p>
+        <p className="thesis"><strong>What the score means:</strong> a relative ranking of shipped outcomes, risk reduction, team leverage, sustained ownership, and code that remains in production. It is a decision aid—not a performance review.</p>
       </section>
 
       <section className="workspace">
@@ -124,6 +130,7 @@ export default function Dashboard({ data }: { data: Data }) {
             <div><strong>{leader.durabilityEvidence.medianAgeDays}d</strong><span>median line age</span></div>
             <div><strong>{leader.durabilityEvidence.episodeCount}</strong><span>monthly code episodes</span></div>
           </div>
+          <div className="worked-example"><span>Durability example</span><p>{durabilityExample(leader)}</p></div>
           <div className="evidence-head"><h3>Proof, not proxy</h3><span>{leader.impactArcs} impact arcs · {leader.activeWeeks}/14 active weeks</span></div>
           <div className="evidence-list">
             {leader.evidence.slice(0, 3).map((item) => (
@@ -147,15 +154,22 @@ export default function Dashboard({ data }: { data: Data }) {
           <section className="modal" role="dialog" aria-modal="true" aria-labelledby="method-title" onMouseDown={(event) => event.stopPropagation()}>
             <button className="modal-close" onClick={() => setMethodOpen(false)} aria-label="Close methodology">×</button>
             <p className="eyebrow">TRANSPARENT BY DESIGN</p>
-            <h2 id="method-title">Impact, with receipts.</h2>
-            <p>Every merged PR is classified and collapsed into a weekly product arc. A deterministic Git-blame sample then finds nonblank production lines introduced or last touched in the window that still exist at HEAD. Each line earns up to three line-months; monthly product episodes use a square root so code volume has diminishing returns.</p>
+            <h2 id="method-title">How the score is calculated</h2>
+            <p>The score compares engineers with observable work in the same 91-day window. It combines four PR-level signals with one code-survival signal. Every dimension becomes a percentile before weighting, so “92” means a relative rank—not 92 units of impact.</p>
+            <ol className="method-steps">
+              <li><span>1</span><div><strong>Find shipped work</strong><p>Keep human-authored commits that reference merged PRs. Exclude bots, dependency updates, generated code, and translation churn.</p></div></li>
+              <li><span>2</span><div><strong>Group related work</strong><p>PRs by the same engineer in the same product area and week become one impact arc. This prevents ten small follow-ups from counting as ten independent wins.</p></div></li>
+              <li><span>3</span><div><strong>Measure code survival</strong><p>Git blame identifies current nonblank production lines last touched during the window. Each surviving line earns age ÷ 30 line-months, capped at three.</p></div></li>
+              <li><span>4</span><div><strong>Apply diminishing returns</strong><p>Lines are grouped by engineer, product area, and month. An episode earns √line-months, so durable breadth matters while sheer code volume cannot dominate.</p></div></li>
+            </ol>
             <div className="method-grid">
               {dimensionMeta.map((dimension) => (
                 <div key={dimension.key}><strong style={{ color: dimension.color }}>{data.weights[dimension.key]}%</strong><h3>{dimension.label}</h3><p>{dimension.key === "customer" ? "New or improved product capability." : dimension.key === "risk" ? "Security, reliability, data integrity, and recovery." : dimension.key === "leverage" ? "Performance, tooling, tests, docs, and delivery systems." : dimension.key === "ownership" ? "Repeat ownership of the same product area over time." : "Age-weighted lines still present at HEAD, grouped into monthly product episodes."}</p></div>
               ))}
             </div>
-            <div className="formula">Score = 25% outcome + 20% risk + 15% leverage + 15% ownership + 25% durability percentile</div>
-            <p className="caveat"><strong>Durability coverage:</strong> {data.survivalCoverage.sampledFiles} of {data.survivalCoverage.changedEligibleFiles.toLocaleString()} eligible changed production files; {data.survivalCoverage.currentLinesScanned.toLocaleString()} current nonblank lines inspected. This is a deterministic sample, not a claim that more code is inherently better. Deleted code can be excellent engineering; mentorship, reviews, and incident leadership remain unobserved.</p>
+            <div className="formula"><span>Final score</span><strong>25% outcome + 20% risk + 15% leverage + 15% ownership + 25% durability</strong></div>
+            <p className="caveat"><strong>What “share” means:</strong> an engineer’s surviving lines divided by all {data.survivalCoverage.survivingWindowLines.toLocaleString()} surviving window lines in the sample—not their share of PostHog’s entire codebase.</p>
+            <p className="caveat"><strong>Coverage and limits:</strong> {data.survivalCoverage.sampledFiles} of {data.survivalCoverage.changedEligibleFiles.toLocaleString()} eligible changed production files; {data.survivalCoverage.currentLinesScanned.toLocaleString()} current nonblank lines inspected. Deleted code can be excellent engineering. Mentorship, reviews, incident leadership, product adoption, and revenue impact remain unobserved.</p>
           </section>
         </div>
       )}
