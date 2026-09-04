@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T20:19:36.383Z",
+  "generatedAt": "2026-09-04T03:52:54.343Z",
   "repository": "PostHog/posthog",
   "window": {
     "since": "2026-06-05",
@@ -13,20 +13,62 @@
     "method": "Complete blobless git history for the date window; merged PRs identified by squash-commit PR references."
   },
   "weights": {
-    "customer": 35,
-    "risk": 30,
-    "leverage": 20,
-    "ownership": 15
+    "customer": 25,
+    "risk": 20,
+    "leverage": 15,
+    "ownership": 15,
+    "durability": 25
+  },
+  "survivalCoverage": {
+    "changedEligibleFiles": 25569,
+    "sampledFiles": 120,
+    "filesBlamed": 120,
+    "currentLinesScanned": 22328,
+    "survivingWindowLines": 14660,
+    "sampling": "Deterministic SHA-1 sample of production-code files changed during the window; tests, generated code, migrations, fixtures, and vendor code excluded."
   },
   "leaders": [
     {
       "name": "Tom Owers",
-      "score": 99,
+      "score": 100,
       "dimensions": {
         "customer": 100,
         "risk": 100,
         "leverage": 97,
-        "ownership": 100
+        "ownership": 100,
+        "durability": 100
+      },
+      "durabilityEvidence": {
+        "name": "Tom Owers",
+        "survivingLines": 2952,
+        "lineMonths": 4058,
+        "durableShare": 20.14,
+        "medianAgeDays": 43,
+        "durabilityRaw": 117.55,
+        "episodeCount": 6,
+        "topEpisodes": [
+          {
+            "month": "2026-07",
+            "scope": "data platform",
+            "lines": 1500,
+            "lineMonths": 2393,
+            "durabilityUnits": 48.92
+          },
+          {
+            "month": "2026-06",
+            "scope": "data platform",
+            "lines": 423,
+            "lineMonths": 1002,
+            "durabilityUnits": 31.65
+          },
+          {
+            "month": "2026-08",
+            "scope": "data platform",
+            "lines": 897,
+            "lineMonths": 591,
+            "durabilityUnits": 24.31
+          }
+        ]
       },
       "prs": 2475,
       "impactArcs": 405,
@@ -86,145 +128,46 @@
       ]
     },
     {
-      "name": "Raúl Negrón-Otero",
-      "score": 97,
-      "dimensions": {
-        "customer": 95,
-        "risk": 96,
-        "leverage": 99,
-        "ownership": 100
-      },
-      "prs": 268,
-      "impactArcs": 99,
-      "activeWeeks": 14,
-      "longestOwnership": 14,
-      "breadth": 32,
-      "topScopes": [
-        {
-          "scope": "platform",
-          "weeks": 14,
-          "prs": 104
-        },
-        {
-          "scope": "product analytics",
-          "weeks": 13,
-          "prs": 62
-        },
-        {
-          "scope": "AI & tasks",
-          "weeks": 11,
-          "prs": 28
-        }
-      ],
-      "evidence": [
-        {
-          "pr": 91758,
-          "title": "feat(eng-analytics): attribute quarantine debt from repo ownership",
-          "scope": "product analytics",
-          "date": "2026-09-02",
-          "url": "https://github.com/PostHog/posthog/pull/91758",
-          "signal": "product"
-        },
-        {
-          "pr": 80472,
-          "title": "perf(ci): replay uncached migrations outside pytest",
-          "scope": "session replay",
-          "date": "2026-08-11",
-          "url": "https://github.com/PostHog/posthog/pull/80472",
-          "signal": "risk"
-        },
-        {
-          "pr": 92561,
-          "title": "feat(eng-analytics): daily test ownership census task",
-          "scope": "AI & tasks",
-          "date": "2026-09-02",
-          "url": "https://github.com/PostHog/posthog/pull/92561",
-          "signal": "leverage"
-        },
-        {
-          "pr": 65887,
-          "title": "perf(ci): share schema cache by migration-set key",
-          "scope": "platform",
-          "date": "2026-06-26",
-          "url": "https://github.com/PostHog/posthog/pull/65887",
-          "signal": "risk"
-        }
-      ]
-    },
-    {
-      "name": "Paul D'Ambra",
-      "score": 95,
-      "dimensions": {
-        "customer": 99,
-        "risk": 94,
-        "leverage": 100,
-        "ownership": 83
-      },
-      "prs": 479,
-      "impactArcs": 190,
-      "activeWeeks": 13,
-      "longestOwnership": 12,
-      "breadth": 77,
-      "topScopes": [
-        {
-          "scope": "product analytics",
-          "weeks": 12,
-          "prs": 61
-        },
-        {
-          "scope": "AI & tasks",
-          "weeks": 10,
-          "prs": 66
-        },
-        {
-          "scope": "platform",
-          "weeks": 10,
-          "prs": 61
-        }
-      ],
-      "evidence": [
-        {
-          "pr": 93954,
-          "title": "feat(dashboards): copy a dashboard tile as a PNG",
-          "scope": "dashboards",
-          "date": "2026-09-03",
-          "url": "https://github.com/PostHog/posthog/pull/93954",
-          "signal": "product"
-        },
-        {
-          "pr": 73400,
-          "title": "fix(ci): restore one Playwright retry",
-          "scope": "platform",
-          "date": "2026-07-24",
-          "url": "https://github.com/PostHog/posthog/pull/73400",
-          "signal": "risk"
-        },
-        {
-          "pr": 91273,
-          "title": "feat(engineering-analytics): headline the full open-to-deploy lead time on the Health tab",
-          "scope": "product analytics",
-          "date": "2026-09-02",
-          "url": "https://github.com/PostHog/posthog/pull/91273",
-          "signal": "leverage"
-        },
-        {
-          "pr": 69430,
-          "title": "fix(tests): stop replay listing tests leaking materialized columns",
-          "scope": "session replay",
-          "date": "2026-07-09",
-          "url": "https://github.com/PostHog/posthog/pull/69430",
-          "signal": "risk"
-        }
-      ]
-    },
-    {
       "name": "Julian Bez",
       "score": 94,
       "dimensions": {
         "customer": 94,
         "risk": 97,
         "leverage": 99,
-        "ownership": 82
+        "ownership": 82,
+        "durability": 96
+      },
+      "durabilityEvidence": {
+        "name": "Julian Bez",
+        "survivingLines": 455,
+        "lineMonths": 749,
+        "durableShare": 3.1,
+        "medianAgeDays": 77,
+        "durabilityRaw": 48.2,
+        "episodeCount": 6,
+        "topEpisodes": [
+          {
+            "month": "2026-06",
+            "scope": "platform",
+            "lines": 226,
+            "lineMonths": 578,
+            "durabilityUnits": 24.04
+          },
+          {
+            "month": "2026-08",
+            "scope": "AI & tasks",
+            "lines": 200,
+            "lineMonths": 108,
+            "durabilityUnits": 10.4
+          },
+          {
+            "month": "2026-06",
+            "scope": "AI & tasks",
+            "lines": 16,
+            "lineMonths": 45,
+            "durabilityUnits": 6.72
+          }
+        ]
       },
       "prs": 262,
       "impactArcs": 88,
@@ -284,67 +227,291 @@
       ]
     },
     {
-      "name": "Andrew Maguire",
-      "score": 91,
+      "name": "Paul D'Ambra",
+      "score": 92,
       "dimensions": {
         "customer": 99,
-        "risk": 77,
-        "leverage": 91,
-        "ownership": 100
+        "risk": 94,
+        "leverage": 100,
+        "ownership": 83,
+        "durability": 85
       },
-      "prs": 388,
-      "impactArcs": 98,
-      "activeWeeks": 14,
-      "longestOwnership": 14,
-      "breadth": 28,
+      "durabilityEvidence": {
+        "name": "Paul D'Ambra",
+        "survivingLines": 26,
+        "lineMonths": 57,
+        "durableShare": 0.18,
+        "medianAgeDays": 59,
+        "durabilityRaw": 12.74,
+        "episodeCount": 3,
+        "topEpisodes": [
+          {
+            "month": "2026-07",
+            "scope": "frontend platform",
+            "lines": 16,
+            "lineMonths": 29,
+            "durabilityUnits": 5.37
+          },
+          {
+            "month": "2026-06",
+            "scope": "session replay",
+            "lines": 7,
+            "lineMonths": 21,
+            "durabilityUnits": 4.53
+          },
+          {
+            "month": "2026-06",
+            "scope": "charts",
+            "lines": 3,
+            "lineMonths": 8,
+            "durabilityUnits": 2.84
+          }
+        ]
+      },
+      "prs": 479,
+      "impactArcs": 190,
+      "activeWeeks": 13,
+      "longestOwnership": 12,
+      "breadth": 77,
       "topScopes": [
         {
-          "scope": "signals",
-          "weeks": 14,
-          "prs": 206
+          "scope": "product analytics",
+          "weeks": 12,
+          "prs": 61
         },
         {
           "scope": "AI & tasks",
-          "weeks": 13,
-          "prs": 70
+          "weeks": 10,
+          "prs": 66
         },
         {
-          "scope": "inbox",
-          "weeks": 8,
-          "prs": 13
+          "scope": "platform",
+          "weeks": 10,
+          "prs": 61
         }
       ],
       "evidence": [
         {
-          "pr": 92115,
-          "title": "feat(signals): let scout suggested prompts cover next-step actions",
-          "scope": "signals",
+          "pr": 93954,
+          "title": "feat(dashboards): copy a dashboard tile as a PNG",
+          "scope": "dashboards",
           "date": "2026-09-03",
-          "url": "https://github.com/PostHog/posthog/pull/92115",
+          "url": "https://github.com/PostHog/posthog/pull/93954",
           "signal": "product"
         },
         {
-          "pr": 91411,
-          "title": "fix(signals): raise the per-run gateway token cap to $15 for implementation runs",
-          "scope": "signals",
-          "date": "2026-08-31",
-          "url": "https://github.com/PostHog/posthog/pull/91411",
+          "pr": 73400,
+          "title": "fix(ci): restore one Playwright retry",
+          "scope": "platform",
+          "date": "2026-07-24",
+          "url": "https://github.com/PostHog/posthog/pull/73400",
           "signal": "risk"
         },
         {
-          "pr": 84356,
-          "title": "feat(signals): rebuild the scouts UI as a roster tab and scout page",
-          "scope": "frontend platform",
-          "date": "2026-08-19",
-          "url": "https://github.com/PostHog/posthog/pull/84356",
+          "pr": 91273,
+          "title": "feat(engineering-analytics): headline the full open-to-deploy lead time on the Health tab",
+          "scope": "product analytics",
+          "date": "2026-09-02",
+          "url": "https://github.com/PostHog/posthog/pull/91273",
           "signal": "leverage"
         },
         {
-          "pr": 80746,
-          "title": "fix(oauth): let credential-less CIMD private_key_jwt clients fall back to PKCE",
+          "pr": 69430,
+          "title": "fix(tests): stop replay listing tests leaking materialized columns",
+          "scope": "session replay",
+          "date": "2026-07-09",
+          "url": "https://github.com/PostHog/posthog/pull/69430",
+          "signal": "risk"
+        }
+      ]
+    },
+    {
+      "name": "Thomas Obermüller",
+      "score": 90,
+      "dimensions": {
+        "customer": 96,
+        "risk": 77,
+        "leverage": 93,
+        "ownership": 82,
+        "durability": 99
+      },
+      "durabilityEvidence": {
+        "name": "Thomas Obermüller",
+        "survivingLines": 815,
+        "lineMonths": 1942,
+        "durableShare": 5.56,
+        "medianAgeDays": 73,
+        "durabilityRaw": 63.13,
+        "episodeCount": 5,
+        "topEpisodes": [
+          {
+            "month": "2026-06",
+            "scope": "frontend platform",
+            "lines": 664,
+            "lineMonths": 1688,
+            "durabilityUnits": 41.09
+          },
+          {
+            "month": "2026-07",
+            "scope": "frontend platform",
+            "lines": 120,
+            "lineMonths": 235,
+            "durabilityUnits": 15.32
+          },
+          {
+            "month": "2026-08",
+            "scope": "frontend platform",
+            "lines": 26,
+            "lineMonths": 14,
+            "durabilityUnits": 3.76
+          }
+        ]
+      },
+      "prs": 189,
+      "impactArcs": 81,
+      "activeWeeks": 12,
+      "longestOwnership": 12,
+      "breadth": 29,
+      "topScopes": [
+        {
+          "scope": "product analytics",
+          "weeks": 12,
+          "prs": 75
+        },
+        {
+          "scope": "dashboards",
+          "weeks": 8,
+          "prs": 17
+        },
+        {
+          "scope": "platform",
+          "weeks": 7,
+          "prs": 9
+        }
+      ],
+      "evidence": [
+        {
+          "pr": 93110,
+          "title": "feat(insights): require a query when writing an insight",
+          "scope": "product analytics",
+          "date": "2026-09-03",
+          "url": "https://github.com/PostHog/posthog/pull/93110",
+          "signal": "product"
+        },
+        {
+          "pr": 65987,
+          "title": "feat(mcp): make exec search forgiving with token ranking",
+          "scope": "AI & tasks",
+          "date": "2026-07-03",
+          "url": "https://github.com/PostHog/posthog/pull/65987",
+          "signal": "risk"
+        },
+        {
+          "pr": 87833,
+          "title": "feat(persons): measure person search latency",
+          "scope": "persons",
+          "date": "2026-08-25",
+          "url": "https://github.com/PostHog/posthog/pull/87833",
+          "signal": "leverage"
+        },
+        {
+          "pr": 86176,
+          "title": "fix(desktop): fold plans from permission requests into the transcript tool call",
           "scope": "identity & access",
-          "date": "2026-08-11",
-          "url": "https://github.com/PostHog/posthog/pull/80746",
+          "date": "2026-08-20",
+          "url": "https://github.com/PostHog/posthog/pull/86176",
+          "signal": "risk"
+        }
+      ]
+    },
+    {
+      "name": "Phil Haack",
+      "score": 89,
+      "dimensions": {
+        "customer": 86,
+        "risk": 77,
+        "leverage": 97,
+        "ownership": 100,
+        "durability": 90
+      },
+      "durabilityEvidence": {
+        "name": "Phil Haack",
+        "survivingLines": 116,
+        "lineMonths": 272,
+        "durableShare": 0.79,
+        "medianAgeDays": 78,
+        "durabilityRaw": 18.55,
+        "episodeCount": 2,
+        "topEpisodes": [
+          {
+            "month": "2026-06",
+            "scope": "flags & experiments",
+            "lines": 105,
+            "lineMonths": 268,
+            "durabilityUnits": 16.36
+          },
+          {
+            "month": "2026-08",
+            "scope": "AI & tasks",
+            "lines": 11,
+            "lineMonths": 5,
+            "durabilityUnits": 2.2
+          }
+        ]
+      },
+      "prs": 139,
+      "impactArcs": 56,
+      "activeWeeks": 14,
+      "longestOwnership": 14,
+      "breadth": 24,
+      "topScopes": [
+        {
+          "scope": "flags & experiments",
+          "weeks": 14,
+          "prs": 80
+        },
+        {
+          "scope": "platform",
+          "weeks": 6,
+          "prs": 9
+        },
+        {
+          "scope": "AI & tasks",
+          "weeks": 5,
+          "prs": 8
+        }
+      ],
+      "evidence": [
+        {
+          "pr": 86291,
+          "title": "feat(flags): shadow-route $feature_flag_called into flag_evaluations",
+          "scope": "flags & experiments",
+          "date": "2026-08-25",
+          "url": "https://github.com/PostHog/posthog/pull/86291",
+          "signal": "product"
+        },
+        {
+          "pr": 61908,
+          "title": "fix(async-migrations): unbreak mypy on 0010 partition test",
+          "scope": "async-migrations",
+          "date": "2026-06-05",
+          "url": "https://github.com/PostHog/posthog/pull/61908",
+          "signal": "risk"
+        },
+        {
+          "pr": 91208,
+          "title": "feat(replay): remove the A/B test results template",
+          "scope": "session replay",
+          "date": "2026-08-30",
+          "url": "https://github.com/PostHog/posthog/pull/91208",
+          "signal": "leverage"
+        },
+        {
+          "pr": 85518,
+          "title": "fix(desktop): make archiving a task idempotent",
+          "scope": "AI & tasks",
+          "date": "2026-08-20",
+          "url": "https://github.com/PostHog/posthog/pull/85518",
           "signal": "risk"
         }
       ]

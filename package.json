@@ -10,7 +10,8 @@
     "build:cf": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "analyze": "node scripts/analyze.mjs"
+    "analyze": "node scripts/analyze.mjs",
+    "analyze:survival": "node scripts/analyze-survival.mjs"
   },
   "dependencies": {
     "next": "16.2.11",

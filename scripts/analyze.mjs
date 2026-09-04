@@ -1,11 +1,14 @@
 import { execFileSync } from "node:child_process";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 const repo = process.argv[2] || "/private/tmp/posthog-90d";
 const output = resolve(process.argv[3] || "./src/data/impact.json");
 const since = process.env.SINCE || "2026-06-05T00:00:00Z";
 const until = process.env.UNTIL || "2026-09-03T23:59:59Z";
+const survivalPath = process.env.SURVIVAL_FILE || resolve(dirname(output), "survival.json");
+const survival = existsSync(survivalPath) ? JSON.parse(readFileSync(survivalPath, "utf8")) : { coverage: null, people: {} };
+const normalizeName = (name) => name.trim().toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
 
 const git = (...args) => execFileSync("git", ["-C", repo, ...args], { encoding: "utf8", maxBuffer: 256 * 1024 * 1024 });
 const log = git("log", `--since=${since}`, `--until=${until}`, "--format=%H%x1f%aN%x1f%aE%x1f%aI%x1f%s%x1f%b%x1e");
@@ -73,7 +76,7 @@ const people = new Map();
 for (const commit of commits) {
   const pr = commit.subject.match(/\(#(\d+)\)\s*$/)?.[1];
   if (!pr || botPattern.test(`${commit.name} ${commit.email}`) || trivialPattern.test(commit.subject)) continue;
-  const key = commit.name.trim().toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+  const key = normalizeName(commit.name);
   const person = people.get(key) || { name: commit.name.trim(), emails: new Set(), commits: [], arcs: new Map(), scopes: new Map(), activeWeeks: new Set() };
   const scope = deriveScope(commit.subject, commit.files);
   const week = weekKey(commit.date);
@@ -120,7 +123,8 @@ const rawPeople = [...people.values()].filter((p) => p.commits.length >= 4).map(
     if (!evidenceItems.some((picked) => picked.item.pr === item.pr || picked.item.scope === item.scope)) evidenceItems.push({ item, signal: item.risk ? "risk" : item.leverage ? "leverage" : "product" });
   }
   const evidence = evidenceItems.map(({ item, signal }) => ({ pr: item.pr, title: item.subject.replace(/\s*\(#\d+\)\s*$/, ""), scope: item.scope, date: item.date.slice(0, 10), url: `https://github.com/PostHog/posthog/pull/${item.pr}`, signal }));
-  return { person, customerRaw, riskRaw, leverageRaw, ownershipRaw: longestOwnership + activeWeeks * 0.3 + breadthRaw * 0.35, activeWeeks, longestOwnership, breadth: person.scopes.size, evidence };
+  const durability = survival.people[normalizeName(person.name)] || { survivingLines: 0, lineMonths: 0, durableShare: 0, medianAgeDays: 0, durabilityRaw: 0, episodeCount: 0, topEpisodes: [] };
+  return { person, customerRaw, riskRaw, leverageRaw, ownershipRaw: longestOwnership + activeWeeks * 0.3 + breadthRaw * 0.35, durabilityRaw: durability.durabilityRaw, durability, activeWeeks, longestOwnership, breadth: person.scopes.size, evidence };
 });
 
 function percentile(value, values) {
@@ -129,16 +133,17 @@ function percentile(value, values) {
   return Math.round((index / Math.max(1, sorted.length - 1)) * 100);
 }
 
-const dimensions = ["customerRaw", "riskRaw", "leverageRaw", "ownershipRaw"];
+const dimensions = ["customerRaw", "riskRaw", "leverageRaw", "ownershipRaw", "durabilityRaw"];
 const distributions = Object.fromEntries(dimensions.map((key) => [key, rawPeople.map((p) => p[key])]));
 const ranked = rawPeople.map((entry) => {
   const customer = percentile(entry.customerRaw, distributions.customerRaw);
   const risk = percentile(entry.riskRaw, distributions.riskRaw);
   const leverage = percentile(entry.leverageRaw, distributions.leverageRaw);
   const ownership = percentile(entry.ownershipRaw, distributions.ownershipRaw);
-  const score = Math.round(customer * 0.35 + risk * 0.3 + leverage * 0.2 + ownership * 0.15);
+  const durability = percentile(entry.durabilityRaw, distributions.durabilityRaw);
+  const score = Math.round(customer * 0.25 + risk * 0.2 + leverage * 0.15 + ownership * 0.15 + durability * 0.25);
   const topScopes = [...entry.person.scopes.entries()].map(([scope, weeks]) => ({ scope, weeks: weeks.size, prs: entry.person.commits.filter((c) => c.scope === scope).length })).sort((a, b) => b.weeks - a.weeks || b.prs - a.prs).slice(0, 3);
-  return { name: entry.person.name, score, dimensions: { customer, risk, leverage, ownership }, prs: entry.person.commits.length, impactArcs: entry.person.arcs.size, activeWeeks: entry.activeWeeks, longestOwnership: entry.longestOwnership, breadth: entry.breadth, topScopes, evidence: entry.evidence };
+  return { name: entry.person.name, score, dimensions: { customer, risk, leverage, ownership, durability }, durabilityEvidence: entry.durability, prs: entry.person.commits.length, impactArcs: entry.person.arcs.size, activeWeeks: entry.activeWeeks, longestOwnership: entry.longestOwnership, breadth: entry.breadth, topScopes, evidence: entry.evidence };
 }).sort((a, b) => b.score - a.score || b.impactArcs - a.impactArcs);
 
 const result = {
@@ -146,7 +151,8 @@ const result = {
   repository: "PostHog/posthog",
   window: { since: since.slice(0, 10), until: until.slice(0, 10), days: 91 },
   coverage: { commitsScanned: commits.length, humanMergedPrs: rawPeople.reduce((sum, p) => sum + p.person.commits.length, 0), engineersScored: rawPeople.length, method: "Complete blobless git history for the date window; merged PRs identified by squash-commit PR references." },
-  weights: { customer: 35, risk: 30, leverage: 20, ownership: 15 },
+  weights: { customer: 25, risk: 20, leverage: 15, ownership: 15, durability: 25 },
+  survivalCoverage: survival.coverage,
   leaders: ranked.slice(0, 5),
   benchmark: {
     medianImpactArcs: Math.round(ranked.map((p) => p.impactArcs).sort((a, b) => a - b)[Math.floor(ranked.length / 2)] || 0),

@@ -1,0 +1,1864 @@
+{
+  "generatedAt": "2026-09-04T03:51:30.297Z",
+  "window": {
+    "since": "2026-06-05",
+    "until": "2026-09-03"
+  },
+  "coverage": {
+    "changedEligibleFiles": 25569,
+    "sampledFiles": 120,
+    "filesBlamed": 120,
+    "currentLinesScanned": 22328,
+    "survivingWindowLines": 14660,
+    "sampling": "Deterministic SHA-1 sample of production-code files changed during the window; tests, generated code, migrations, fixtures, and vendor code excluded."
+  },
+  "people": {
+    "georgiy tarasov": {
+      "name": "Georgiy Tarasov",
+      "survivingLines": 80,
+      "lineMonths": 104,
+      "durableShare": 0.55,
+      "medianAgeDays": 22,
+      "durabilityRaw": 16,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "AI & tasks",
+          "lines": 29,
+          "lineMonths": 70,
+          "durabilityUnits": 8.38
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 48,
+          "lineMonths": 29,
+          "durabilityUnits": 5.37
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 3,
+          "lineMonths": 5,
+          "durabilityUnits": 2.25
+        }
+      ]
+    },
+    "tom owers": {
+      "name": "Tom Owers",
+      "survivingLines": 2952,
+      "lineMonths": 4058,
+      "durableShare": 20.14,
+      "medianAgeDays": 43,
+      "durabilityRaw": 117.55,
+      "episodeCount": 6,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "data platform",
+          "lines": 1500,
+          "lineMonths": 2393,
+          "durabilityUnits": 48.92
+        },
+        {
+          "month": "2026-06",
+          "scope": "data platform",
+          "lines": 423,
+          "lineMonths": 1002,
+          "durabilityUnits": 31.65
+        },
+        {
+          "month": "2026-08",
+          "scope": "data platform",
+          "lines": 897,
+          "lineMonths": 591,
+          "durabilityUnits": 24.31
+        }
+      ]
+    },
+    "marius andra": {
+      "name": "Marius Andra",
+      "survivingLines": 345,
+      "lineMonths": 504,
+      "durableShare": 2.35,
+      "medianAgeDays": 49,
+      "durabilityRaw": 40.69,
+      "episodeCount": 5,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "product analytics",
+          "lines": 203,
+          "lineMonths": 335,
+          "durabilityUnits": 18.29
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 59,
+          "lineMonths": 97,
+          "durabilityUnits": 9.85
+        },
+        {
+          "month": "2026-08",
+          "scope": "data platform",
+          "lines": 61,
+          "lineMonths": 44,
+          "durabilityUnits": 6.6
+        }
+      ]
+    },
+    "fernando gomes": {
+      "name": "Fernando Gomes",
+      "survivingLines": 17,
+      "lineMonths": 27,
+      "durableShare": 0.12,
+      "medianAgeDays": 41,
+      "durabilityRaw": 9.17,
+      "episodeCount": 4,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 14,
+          "lineMonths": 19,
+          "durabilityUnits": 4.39
+        },
+        {
+          "month": "2026-06",
+          "scope": "frontend platform",
+          "lines": 1,
+          "lineMonths": 3,
+          "durabilityUnits": 1.59
+        },
+        {
+          "month": "2026-06",
+          "scope": "flags & experiments",
+          "lines": 1,
+          "lineMonths": 3,
+          "durabilityUnits": 1.59
+        }
+      ]
+    },
+    "rafael audibert": {
+      "name": "Rafael Audibert",
+      "survivingLines": 196,
+      "lineMonths": 286,
+      "durableShare": 1.34,
+      "medianAgeDays": 36,
+      "durabilityRaw": 44.66,
+      "episodeCount": 10,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 58,
+          "lineMonths": 70,
+          "durabilityUnits": 8.4
+        },
+        {
+          "month": "2026-06",
+          "scope": "platform",
+          "lines": 25,
+          "lineMonths": 66,
+          "durabilityUnits": 8.12
+        },
+        {
+          "month": "2026-07",
+          "scope": "growth",
+          "lines": 32,
+          "lineMonths": 62,
+          "durabilityUnits": 7.88
+        }
+      ]
+    },
+    "daniel rc": {
+      "name": "Daniel RC",
+      "survivingLines": 10,
+      "lineMonths": 16,
+      "durableShare": 0.07,
+      "medianAgeDays": 43,
+      "durabilityRaw": 6.25,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "data platform",
+          "lines": 7,
+          "lineMonths": 10,
+          "durabilityUnits": 3.21
+        },
+        {
+          "month": "2026-06",
+          "scope": "data platform",
+          "lines": 2,
+          "lineMonths": 6,
+          "durabilityUnits": 2.37
+        },
+        {
+          "month": "2026-08",
+          "scope": "platform",
+          "lines": 1,
+          "lineMonths": 0,
+          "durabilityUnits": 0.67
+        }
+      ]
+    },
+    "shy alter": {
+      "name": "Shy Alter",
+      "survivingLines": 80,
+      "lineMonths": 29,
+      "durableShare": 0.55,
+      "medianAgeDays": 14,
+      "durabilityRaw": 9.4,
+      "episodeCount": 4,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 41,
+          "lineMonths": 18,
+          "durabilityUnits": 4.24
+        },
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 19,
+          "lineMonths": 6,
+          "durabilityUnits": 2.55
+        },
+        {
+          "month": "2026-08",
+          "scope": "desktop",
+          "lines": 9,
+          "lineMonths": 4,
+          "durabilityUnits": 2.1
+        }
+      ]
+    },
+    "sam pennington": {
+      "name": "Sam Pennington",
+      "survivingLines": 109,
+      "lineMonths": 106,
+      "durableShare": 0.74,
+      "medianAgeDays": 36,
+      "durabilityRaw": 20.15,
+      "episodeCount": 5,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "product analytics",
+          "lines": 36,
+          "lineMonths": 59,
+          "durabilityUnits": 7.7
+        },
+        {
+          "month": "2026-06",
+          "scope": "product analytics",
+          "lines": 11,
+          "lineMonths": 24,
+          "durabilityUnits": 4.89
+        },
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 8,
+          "lineMonths": 13,
+          "durabilityUnits": 3.66
+        }
+      ]
+    },
+    "georges-antoine assi": {
+      "name": "Georges-Antoine Assi",
+      "survivingLines": 14,
+      "lineMonths": 4,
+      "durableShare": 0.1,
+      "medianAgeDays": 0,
+      "durabilityRaw": 2.4,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 3,
+          "lineMonths": 4,
+          "durabilityUnits": 2.03
+        },
+        {
+          "month": "2026-09",
+          "scope": "AI & tasks",
+          "lines": 11,
+          "lineMonths": 0,
+          "durabilityUnits": 0.37
+        }
+      ]
+    },
+    "hayne ryu": {
+      "name": "Hayne Ryu",
+      "survivingLines": 111,
+      "lineMonths": 165,
+      "durableShare": 0.76,
+      "medianAgeDays": 46,
+      "durabilityRaw": 14.43,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 110,
+          "lineMonths": 162,
+          "durabilityUnits": 12.74
+        },
+        {
+          "month": "2026-06",
+          "scope": "session replay",
+          "lines": 1,
+          "lineMonths": 3,
+          "durabilityUnits": 1.69
+        }
+      ]
+    },
+    "tue haulund": {
+      "name": "Tue Haulund",
+      "survivingLines": 1009,
+      "lineMonths": 665,
+      "durableShare": 6.88,
+      "medianAgeDays": 8,
+      "durabilityRaw": 46.1,
+      "episodeCount": 4,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "session replay",
+          "lines": 655,
+          "lineMonths": 268,
+          "durabilityUnits": 16.36
+        },
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 132,
+          "lineMonths": 264,
+          "durabilityUnits": 16.25
+        },
+        {
+          "month": "2026-06",
+          "scope": "session replay",
+          "lines": 51,
+          "lineMonths": 128,
+          "durabilityUnits": 11.34
+        }
+      ]
+    },
+    "arno hillen": {
+      "name": "Arno Hillen",
+      "survivingLines": 334,
+      "lineMonths": 303,
+      "durableShare": 2.28,
+      "medianAgeDays": 22,
+      "durabilityRaw": 26.07,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 140,
+          "lineMonths": 169,
+          "durabilityUnits": 12.99
+        },
+        {
+          "month": "2026-08",
+          "scope": "session replay",
+          "lines": 182,
+          "lineMonths": 131,
+          "durabilityUnits": 11.46
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 12,
+          "lineMonths": 3,
+          "durabilityUnits": 1.62
+        }
+      ]
+    },
+    "kim svatos dugan": {
+      "name": "Kim Svatos Dugan",
+      "survivingLines": 63,
+      "lineMonths": 89,
+      "durableShare": 0.43,
+      "medianAgeDays": 41,
+      "durabilityRaw": 13.78,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 50,
+          "lineMonths": 69,
+          "durabilityUnits": 8.29
+        },
+        {
+          "month": "2026-06",
+          "scope": "session replay",
+          "lines": 9,
+          "lineMonths": 20,
+          "durabilityUnits": 4.42
+        },
+        {
+          "month": "2026-08",
+          "scope": "session replay",
+          "lines": 4,
+          "lineMonths": 1,
+          "durabilityUnits": 1.07
+        }
+      ]
+    },
+    "paul d'ambra": {
+      "name": "Paul D'Ambra",
+      "survivingLines": 26,
+      "lineMonths": 57,
+      "durableShare": 0.18,
+      "medianAgeDays": 59,
+      "durabilityRaw": 12.74,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 16,
+          "lineMonths": 29,
+          "durabilityUnits": 5.37
+        },
+        {
+          "month": "2026-06",
+          "scope": "session replay",
+          "lines": 7,
+          "lineMonths": 21,
+          "durabilityUnits": 4.53
+        },
+        {
+          "month": "2026-06",
+          "scope": "charts",
+          "lines": 3,
+          "lineMonths": 8,
+          "durabilityUnits": 2.84
+        }
+      ]
+    },
+    "coryslater": {
+      "name": "coryslater",
+      "survivingLines": 4,
+      "lineMonths": 3,
+      "durableShare": 0.03,
+      "medianAgeDays": 21,
+      "durabilityRaw": 1.66,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "session replay",
+          "lines": 4,
+          "lineMonths": 3,
+          "durabilityUnits": 1.66
+        }
+      ]
+    },
+    "xander": {
+      "name": "Xander",
+      "survivingLines": 36,
+      "lineMonths": 35,
+      "durableShare": 0.25,
+      "medianAgeDays": 42,
+      "durabilityRaw": 8.17,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 18,
+          "lineMonths": 25,
+          "durabilityUnits": 5.03
+        },
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 18,
+          "lineMonths": 10,
+          "durabilityUnits": 3.14
+        }
+      ]
+    },
+    "chris shine": {
+      "name": "Chris Shine",
+      "survivingLines": 197,
+      "lineMonths": 42,
+      "durableShare": 1.34,
+      "medianAgeDays": 6,
+      "durabilityRaw": 6.45,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 197,
+          "lineMonths": 42,
+          "durabilityUnits": 6.45
+        }
+      ]
+    },
+    "willwearing": {
+      "name": "willwearing",
+      "survivingLines": 84,
+      "lineMonths": 28,
+      "durableShare": 0.57,
+      "medianAgeDays": 10,
+      "durabilityRaw": 5.33,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "product analytics",
+          "lines": 84,
+          "lineMonths": 28,
+          "durabilityUnits": 5.33
+        }
+      ]
+    },
+    "thomas obermuller": {
+      "name": "Thomas Obermüller",
+      "survivingLines": 815,
+      "lineMonths": 1942,
+      "durableShare": 5.56,
+      "medianAgeDays": 73,
+      "durabilityRaw": 63.13,
+      "episodeCount": 5,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "frontend platform",
+          "lines": 664,
+          "lineMonths": 1688,
+          "durabilityUnits": 41.09
+        },
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 120,
+          "lineMonths": 235,
+          "durabilityUnits": 15.32
+        },
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 26,
+          "lineMonths": 14,
+          "durabilityUnits": 3.76
+        }
+      ]
+    },
+    "arthur moreira de deus": {
+      "name": "Arthur Moreira de Deus",
+      "survivingLines": 770,
+      "lineMonths": 861,
+      "durableShare": 5.25,
+      "medianAgeDays": 13,
+      "durabilityRaw": 58.06,
+      "episodeCount": 5,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "data platform",
+          "lines": 150,
+          "lineMonths": 316,
+          "durabilityUnits": 17.78
+        },
+        {
+          "month": "2026-06",
+          "scope": "product analytics",
+          "lines": 116,
+          "lineMonths": 276,
+          "durabilityUnits": 16.61
+        },
+        {
+          "month": "2026-08",
+          "scope": "product analytics",
+          "lines": 445,
+          "lineMonths": 185,
+          "durabilityUnits": 13.62
+        }
+      ]
+    },
+    "charles vien": {
+      "name": "Charles Vien",
+      "survivingLines": 1366,
+      "lineMonths": 1531,
+      "durableShare": 9.32,
+      "medianAgeDays": 34,
+      "durabilityRaw": 82.34,
+      "episodeCount": 7,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "desktop",
+          "lines": 746,
+          "lineMonths": 839,
+          "durabilityUnits": 28.97
+        },
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 249,
+          "lineMonths": 280,
+          "durabilityUnits": 16.73
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 237,
+          "lineMonths": 267,
+          "durabilityUnits": 16.33
+        }
+      ]
+    },
+    "daniel parker": {
+      "name": "Daniel Parker",
+      "survivingLines": 13,
+      "lineMonths": 10,
+      "durableShare": 0.09,
+      "medianAgeDays": 24,
+      "durabilityRaw": 3.19,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "product analytics",
+          "lines": 13,
+          "lineMonths": 10,
+          "durabilityUnits": 3.19
+        }
+      ]
+    },
+    "sinan kucukkoseler": {
+      "name": "Sinan Kucukkoseler",
+      "survivingLines": 5,
+      "lineMonths": 12,
+      "durableShare": 0.03,
+      "medianAgeDays": 70,
+      "durabilityRaw": 3.4,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "charts",
+          "lines": 5,
+          "lineMonths": 12,
+          "durabilityUnits": 3.4
+        }
+      ]
+    },
+    "vasco de krijger": {
+      "name": "Vasco de Krijger",
+      "survivingLines": 4,
+      "lineMonths": 1,
+      "durableShare": 0.03,
+      "medianAgeDays": 7,
+      "durabilityRaw": 1.06,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 2,
+          "lineMonths": 0,
+          "durabilityUnits": 0.66
+        },
+        {
+          "month": "2026-09",
+          "scope": "session replay",
+          "lines": 2,
+          "lineMonths": 0,
+          "durabilityUnits": 0.4
+        }
+      ]
+    },
+    "jonathan mieloo": {
+      "name": "Jonathan Mieloo",
+      "survivingLines": 55,
+      "lineMonths": 17,
+      "durableShare": 0.38,
+      "medianAgeDays": 15,
+      "durabilityRaw": 5.32,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 33,
+          "lineMonths": 16,
+          "durabilityUnits": 3.94
+        },
+        {
+          "month": "2026-09",
+          "scope": "AI & tasks",
+          "lines": 22,
+          "lineMonths": 2,
+          "durabilityUnits": 1.38
+        }
+      ]
+    },
+    "estefania": {
+      "name": "estefania",
+      "survivingLines": 2,
+      "lineMonths": 2,
+      "durableShare": 0.01,
+      "medianAgeDays": 37,
+      "durabilityRaw": 1.56,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "data platform",
+          "lines": 2,
+          "lineMonths": 2,
+          "durabilityUnits": 1.56
+        }
+      ]
+    },
+    "matheus batista": {
+      "name": "Matheus Batista",
+      "survivingLines": 870,
+      "lineMonths": 1749,
+      "durableShare": 5.93,
+      "medianAgeDays": 71,
+      "durabilityRaw": 63.11,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "identity & access",
+          "lines": 568,
+          "lineMonths": 1350,
+          "durabilityUnits": 36.74
+        },
+        {
+          "month": "2026-07",
+          "scope": "cohorts",
+          "lines": 268,
+          "lineMonths": 334,
+          "durabilityUnits": 18.27
+        },
+        {
+          "month": "2026-07",
+          "scope": "identity & access",
+          "lines": 34,
+          "lineMonths": 66,
+          "durabilityUnits": 8.11
+        }
+      ]
+    },
+    "zach brown": {
+      "name": "Zach Brown",
+      "survivingLines": 981,
+      "lineMonths": 1010,
+      "durableShare": 6.69,
+      "medianAgeDays": 37,
+      "durabilityRaw": 53.64,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "personhog",
+          "lines": 349,
+          "lineMonths": 554,
+          "durabilityUnits": 23.55
+        },
+        {
+          "month": "2026-08",
+          "scope": "personhog",
+          "lines": 474,
+          "lineMonths": 261,
+          "durabilityUnits": 16.14
+        },
+        {
+          "month": "2026-07",
+          "scope": "platform",
+          "lines": 158,
+          "lineMonths": 195,
+          "durabilityUnits": 13.96
+        }
+      ]
+    },
+    "jose sequeira": {
+      "name": "José Sequeira",
+      "survivingLines": 19,
+      "lineMonths": 27,
+      "durableShare": 0.13,
+      "medianAgeDays": 21,
+      "durabilityRaw": 11.44,
+      "episodeCount": 6,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "AI & tasks",
+          "lines": 5,
+          "lineMonths": 12,
+          "durabilityUnits": 3.47
+        },
+        {
+          "month": "2026-08",
+          "scope": "platform",
+          "lines": 7,
+          "lineMonths": 5,
+          "durabilityUnits": 2.24
+        },
+        {
+          "month": "2026-06",
+          "scope": "platform",
+          "lines": 2,
+          "lineMonths": 5,
+          "durabilityUnits": 2.17
+        }
+      ]
+    },
+    "julian bez": {
+      "name": "Julian Bez",
+      "survivingLines": 455,
+      "lineMonths": 749,
+      "durableShare": 3.1,
+      "medianAgeDays": 77,
+      "durabilityRaw": 48.2,
+      "episodeCount": 6,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "platform",
+          "lines": 226,
+          "lineMonths": 578,
+          "durabilityUnits": 24.04
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 200,
+          "lineMonths": 108,
+          "durabilityUnits": 10.4
+        },
+        {
+          "month": "2026-06",
+          "scope": "AI & tasks",
+          "lines": 16,
+          "lineMonths": 45,
+          "durabilityUnits": 6.72
+        }
+      ]
+    },
+    "hugues pouillot": {
+      "name": "Hugues Pouillot",
+      "survivingLines": 9,
+      "lineMonths": 20,
+      "durableShare": 0.06,
+      "medianAgeDays": 78,
+      "durabilityRaw": 5.63,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "error tracking",
+          "lines": 7,
+          "lineMonths": 18,
+          "durabilityUnits": 4.28
+        },
+        {
+          "month": "2026-08",
+          "scope": "error tracking",
+          "lines": 2,
+          "lineMonths": 2,
+          "durabilityUnits": 1.36
+        }
+      ]
+    },
+    "james gill": {
+      "name": "James Gill",
+      "survivingLines": 114,
+      "lineMonths": 30,
+      "durableShare": 0.78,
+      "medianAgeDays": 8,
+      "durabilityRaw": 5.5,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 114,
+          "lineMonths": 30,
+          "durabilityUnits": 5.5
+        }
+      ]
+    },
+    "patricio": {
+      "name": "Patricio",
+      "survivingLines": 57,
+      "lineMonths": 27,
+      "durableShare": 0.39,
+      "medianAgeDays": 16,
+      "durabilityRaw": 6.35,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 46,
+          "lineMonths": 25,
+          "durabilityUnits": 4.96
+        },
+        {
+          "month": "2026-08",
+          "scope": "cdp",
+          "lines": 11,
+          "lineMonths": 2,
+          "durabilityUnits": 1.39
+        }
+      ]
+    },
+    "reece jones": {
+      "name": "Reece Jones",
+      "survivingLines": 63,
+      "lineMonths": 16,
+      "durableShare": 0.43,
+      "medianAgeDays": 1,
+      "durabilityRaw": 5.19,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 11,
+          "lineMonths": 14,
+          "durabilityUnits": 3.68
+        },
+        {
+          "month": "2026-09",
+          "scope": "identity & access",
+          "lines": 52,
+          "lineMonths": 2,
+          "durabilityUnits": 1.52
+        }
+      ]
+    },
+    "sandy spicer": {
+      "name": "Sandy Spicer",
+      "survivingLines": 18,
+      "lineMonths": 39,
+      "durableShare": 0.12,
+      "medianAgeDays": 69,
+      "durabilityRaw": 6.59,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "platform",
+          "lines": 17,
+          "lineMonths": 39,
+          "durabilityUnits": 6.26
+        },
+        {
+          "month": "2026-08",
+          "scope": "queries",
+          "lines": 1,
+          "lineMonths": 0,
+          "durabilityUnits": 0.33
+        }
+      ]
+    },
+    "nick best": {
+      "name": "Nick Best",
+      "survivingLines": 1,
+      "lineMonths": 3,
+      "durableShare": 0.01,
+      "medianAgeDays": 79,
+      "durabilityRaw": 1.62,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "flags & experiments",
+          "lines": 1,
+          "lineMonths": 3,
+          "durabilityUnits": 1.62
+        }
+      ]
+    },
+    "marcel poelker": {
+      "name": "Marcel Poelker",
+      "survivingLines": 14,
+      "lineMonths": 10,
+      "durableShare": 0.1,
+      "medianAgeDays": 21,
+      "durabilityRaw": 3.14,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 14,
+          "lineMonths": 10,
+          "durabilityUnits": 3.14
+        }
+      ]
+    },
+    "nicholas waltz": {
+      "name": "Nicholas Waltz",
+      "survivingLines": 10,
+      "lineMonths": 25,
+      "durableShare": 0.07,
+      "medianAgeDays": 76,
+      "durabilityRaw": 5.05,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "session replay",
+          "lines": 10,
+          "lineMonths": 25,
+          "durabilityUnits": 5.05
+        }
+      ]
+    },
+    "peter kirkham": {
+      "name": "Peter Kirkham",
+      "survivingLines": 176,
+      "lineMonths": 208,
+      "durableShare": 1.2,
+      "medianAgeDays": 31,
+      "durabilityRaw": 19.94,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "canvas",
+          "lines": 145,
+          "lineMonths": 148,
+          "durabilityUnits": 12.17
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 31,
+          "lineMonths": 60,
+          "durabilityUnits": 7.77
+        }
+      ]
+    },
+    "adam leith": {
+      "name": "Adam Leith",
+      "survivingLines": 562,
+      "lineMonths": 267,
+      "durableShare": 3.83,
+      "medianAgeDays": 13,
+      "durabilityRaw": 24.91,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 456,
+          "lineMonths": 204,
+          "durabilityUnits": 14.28
+        },
+        {
+          "month": "2026-08",
+          "scope": "data platform",
+          "lines": 99,
+          "lineMonths": 51,
+          "durabilityUnits": 7.17
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 7,
+          "lineMonths": 12,
+          "durabilityUnits": 3.46
+        }
+      ]
+    },
+    "marcus hof": {
+      "name": "Marcus Hof",
+      "survivingLines": 31,
+      "lineMonths": 86,
+      "durableShare": 0.21,
+      "medianAgeDays": 83,
+      "durabilityRaw": 9.28,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "data platform",
+          "lines": 31,
+          "lineMonths": 86,
+          "durabilityUnits": 9.28
+        }
+      ]
+    },
+    "tomas farias santana": {
+      "name": "Tomás Farías Santana",
+      "survivingLines": 3,
+      "lineMonths": 3,
+      "durableShare": 0.02,
+      "medianAgeDays": 2,
+      "durabilityRaw": 2.04,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "data platform",
+          "lines": 1,
+          "lineMonths": 3,
+          "durabilityUnits": 1.71
+        },
+        {
+          "month": "2026-09",
+          "scope": "data platform",
+          "lines": 2,
+          "lineMonths": 0,
+          "durabilityUnits": 0.33
+        }
+      ]
+    },
+    "paweł ledwon": {
+      "name": "Paweł Ledwoń",
+      "survivingLines": 26,
+      "lineMonths": 42,
+      "durableShare": 0.18,
+      "medianAgeDays": 55,
+      "durabilityRaw": 11.16,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 9,
+          "lineMonths": 19,
+          "durabilityUnits": 4.34
+        },
+        {
+          "month": "2026-07",
+          "scope": "ingestion",
+          "lines": 8,
+          "lineMonths": 15,
+          "durabilityUnits": 3.85
+        },
+        {
+          "month": "2026-08",
+          "scope": "ingestion",
+          "lines": 9,
+          "lineMonths": 9,
+          "durabilityUnits": 2.97
+        }
+      ]
+    },
+    "vojta bartos": {
+      "name": "Vojta Bartoš",
+      "survivingLines": 102,
+      "lineMonths": 60,
+      "durableShare": 0.7,
+      "medianAgeDays": 18,
+      "durabilityRaw": 7.74,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 102,
+          "lineMonths": 60,
+          "durabilityUnits": 7.74
+        }
+      ]
+    },
+    "javier bahamondes": {
+      "name": "Javier Bahamondes",
+      "survivingLines": 73,
+      "lineMonths": 51,
+      "durableShare": 0.5,
+      "medianAgeDays": 21,
+      "durabilityRaw": 7.13,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "product analytics",
+          "lines": 73,
+          "lineMonths": 51,
+          "durabilityUnits": 7.13
+        }
+      ]
+    },
+    "aleksander błaszkiewicz": {
+      "name": "Aleksander Błaszkiewicz",
+      "survivingLines": 15,
+      "lineMonths": 24,
+      "durableShare": 0.1,
+      "medianAgeDays": 48,
+      "durabilityRaw": 4.87,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "error tracking",
+          "lines": 15,
+          "lineMonths": 24,
+          "durabilityUnits": 4.87
+        }
+      ]
+    },
+    "daniel marchuk": {
+      "name": "Daniel Marchuk",
+      "survivingLines": 94,
+      "lineMonths": 130,
+      "durableShare": 0.64,
+      "medianAgeDays": 45,
+      "durabilityRaw": 23.26,
+      "episodeCount": 6,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "workflows",
+          "lines": 31,
+          "lineMonths": 50,
+          "durabilityUnits": 7.09
+        },
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 26,
+          "lineMonths": 41,
+          "durabilityUnits": 6.37
+        },
+        {
+          "month": "2026-08",
+          "scope": "workflows",
+          "lines": 33,
+          "lineMonths": 32,
+          "durabilityUnits": 5.62
+        }
+      ]
+    },
+    "harley alexander": {
+      "name": "Harley Alexander",
+      "survivingLines": 226,
+      "lineMonths": 92,
+      "durableShare": 1.54,
+      "medianAgeDays": 1,
+      "durabilityRaw": 11.83,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "workflows",
+          "lines": 53,
+          "lineMonths": 86,
+          "durabilityUnits": 9.25
+        },
+        {
+          "month": "2026-09",
+          "scope": "desktop",
+          "lines": 173,
+          "lineMonths": 7,
+          "durabilityUnits": 2.58
+        }
+      ]
+    },
+    "phil haack": {
+      "name": "Phil Haack",
+      "survivingLines": 116,
+      "lineMonths": 272,
+      "durableShare": 0.79,
+      "medianAgeDays": 78,
+      "durabilityRaw": 18.55,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "flags & experiments",
+          "lines": 105,
+          "lineMonths": 268,
+          "durabilityUnits": 16.36
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 11,
+          "lineMonths": 5,
+          "durabilityUnits": 2.2
+        }
+      ]
+    },
+    "adam bowker": {
+      "name": "Adam Bowker",
+      "survivingLines": 533,
+      "lineMonths": 196,
+      "durableShare": 3.64,
+      "medianAgeDays": 11,
+      "durabilityRaw": 18.35,
+      "episodeCount": 4,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "desktop",
+          "lines": 518,
+          "lineMonths": 186,
+          "durabilityUnits": 13.65
+        },
+        {
+          "month": "2026-08",
+          "scope": "error tracking",
+          "lines": 7,
+          "lineMonths": 6,
+          "durabilityUnits": 2.36
+        },
+        {
+          "month": "2026-08",
+          "scope": "data platform",
+          "lines": 5,
+          "lineMonths": 4,
+          "durabilityUnits": 1.96
+        }
+      ]
+    },
+    "alessandro pogliaghi": {
+      "name": "Alessandro Pogliaghi",
+      "survivingLines": 74,
+      "lineMonths": 112,
+      "durableShare": 0.5,
+      "medianAgeDays": 48,
+      "durabilityRaw": 17.87,
+      "episodeCount": 4,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 43,
+          "lineMonths": 68,
+          "durabilityUnits": 8.25
+        },
+        {
+          "month": "2026-07",
+          "scope": "error tracking",
+          "lines": 18,
+          "lineMonths": 37,
+          "durabilityUnits": 6.06
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 11,
+          "lineMonths": 6,
+          "durabilityUnits": 2.41
+        }
+      ]
+    },
+    "dylan martin": {
+      "name": "Dylan Martin",
+      "survivingLines": 215,
+      "lineMonths": 21,
+      "durableShare": 1.47,
+      "medianAgeDays": 3,
+      "durabilityRaw": 6.48,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 141,
+          "lineMonths": 17,
+          "durabilityUnits": 4.06
+        },
+        {
+          "month": "2026-09",
+          "scope": "frontend platform",
+          "lines": 73,
+          "lineMonths": 5,
+          "durabilityUnits": 2.15
+        },
+        {
+          "month": "2026-09",
+          "scope": "AI & tasks",
+          "lines": 1,
+          "lineMonths": 0,
+          "durabilityUnits": 0.26
+        }
+      ]
+    },
+    "gustavo h. strassburger": {
+      "name": "Gustavo H. Strassburger",
+      "survivingLines": 79,
+      "lineMonths": 58,
+      "durableShare": 0.54,
+      "medianAgeDays": 22,
+      "durabilityRaw": 7.6,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 79,
+          "lineMonths": 58,
+          "durabilityUnits": 7.6
+        }
+      ]
+    },
+    "raquel smith": {
+      "name": "Raquel Smith",
+      "survivingLines": 2,
+      "lineMonths": 0,
+      "durableShare": 0.01,
+      "medianAgeDays": 3,
+      "durabilityRaw": 0.46,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 2,
+          "lineMonths": 0,
+          "durabilityUnits": 0.46
+        }
+      ]
+    },
+    "joe martin": {
+      "name": "Joe Martin",
+      "survivingLines": 158,
+      "lineMonths": 154,
+      "durableShare": 1.08,
+      "medianAgeDays": 29,
+      "durabilityRaw": 12.42,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 158,
+          "lineMonths": 154,
+          "durabilityUnits": 12.42
+        }
+      ]
+    },
+    "tom piccirello": {
+      "name": "Tom Piccirello",
+      "survivingLines": 11,
+      "lineMonths": 26,
+      "durableShare": 0.08,
+      "medianAgeDays": 72,
+      "durabilityRaw": 5.14,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "identity & access",
+          "lines": 11,
+          "lineMonths": 26,
+          "durabilityUnits": 5.14
+        }
+      ]
+    },
+    "ruby childs": {
+      "name": "ruby childs",
+      "survivingLines": 166,
+      "lineMonths": 157,
+      "durableShare": 1.13,
+      "medianAgeDays": 28,
+      "durabilityRaw": 12.53,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 166,
+          "lineMonths": 157,
+          "durabilityUnits": 12.53
+        }
+      ]
+    },
+    "rodrigo iloro": {
+      "name": "Rodrigo Iloro",
+      "survivingLines": 32,
+      "lineMonths": 38,
+      "durableShare": 0.22,
+      "medianAgeDays": 13,
+      "durabilityRaw": 9.45,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "flags & experiments",
+          "lines": 12,
+          "lineMonths": 28,
+          "durabilityUnits": 5.34
+        },
+        {
+          "month": "2026-08",
+          "scope": "flags & experiments",
+          "lines": 19,
+          "lineMonths": 8,
+          "durabilityUnits": 2.88
+        },
+        {
+          "month": "2026-07",
+          "scope": "flags & experiments",
+          "lines": 1,
+          "lineMonths": 2,
+          "durabilityUnits": 1.24
+        }
+      ]
+    },
+    "phill": {
+      "name": "Phill",
+      "survivingLines": 1,
+      "lineMonths": 1,
+      "durableShare": 0.01,
+      "medianAgeDays": 38,
+      "durabilityRaw": 1.12,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "flags & experiments",
+          "lines": 1,
+          "lineMonths": 1,
+          "durabilityUnits": 1.12
+        }
+      ]
+    },
+    "andy zhao": {
+      "name": "Andy Zhao",
+      "survivingLines": 62,
+      "lineMonths": 72,
+      "durableShare": 0.42,
+      "medianAgeDays": 35,
+      "durabilityRaw": 8.48,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "platform",
+          "lines": 62,
+          "lineMonths": 72,
+          "durabilityUnits": 8.48
+        }
+      ]
+    },
+    "danilo campos": {
+      "name": "Danilo Campos",
+      "survivingLines": 53,
+      "lineMonths": 138,
+      "durableShare": 0.36,
+      "medianAgeDays": 78,
+      "durabilityRaw": 11.74,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "identity & access",
+          "lines": 53,
+          "lineMonths": 138,
+          "durabilityUnits": 11.74
+        }
+      ]
+    },
+    "ben white": {
+      "name": "Ben White",
+      "survivingLines": 34,
+      "lineMonths": 18,
+      "durableShare": 0.23,
+      "medianAgeDays": 9,
+      "durabilityRaw": 6.44,
+      "episodeCount": 3,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "cdp",
+          "lines": 12,
+          "lineMonths": 12,
+          "durabilityUnits": 3.43
+        },
+        {
+          "month": "2026-08",
+          "scope": "nodejs",
+          "lines": 21,
+          "lineMonths": 6,
+          "durabilityUnits": 2.44
+        },
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 1,
+          "lineMonths": 0,
+          "durabilityUnits": 0.56
+        }
+      ]
+    },
+    "anna garcia": {
+      "name": "Anna Garcia",
+      "survivingLines": 8,
+      "lineMonths": 3,
+      "durableShare": 0.05,
+      "medianAgeDays": 9,
+      "durabilityRaw": 1.59,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "product analytics",
+          "lines": 8,
+          "lineMonths": 3,
+          "durabilityUnits": 1.59
+        }
+      ]
+    },
+    "robbie": {
+      "name": "Robbie",
+      "survivingLines": 72,
+      "lineMonths": 79,
+      "durableShare": 0.49,
+      "medianAgeDays": 39,
+      "durabilityRaw": 10.8,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "session replay",
+          "lines": 58,
+          "lineMonths": 75,
+          "durabilityUnits": 8.64
+        },
+        {
+          "month": "2026-08",
+          "scope": "session replay",
+          "lines": 14,
+          "lineMonths": 5,
+          "durabilityUnits": 2.15
+        }
+      ]
+    },
+    "frank hamand": {
+      "name": "Frank Hamand",
+      "survivingLines": 178,
+      "lineMonths": 182,
+      "durableShare": 1.21,
+      "medianAgeDays": 30,
+      "durabilityRaw": 13.48,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 178,
+          "lineMonths": 182,
+          "durabilityUnits": 13.48
+        }
+      ]
+    },
+    "joshua snyder": {
+      "name": "Joshua Snyder",
+      "survivingLines": 14,
+      "lineMonths": 33,
+      "durableShare": 0.1,
+      "medianAgeDays": 70,
+      "durabilityRaw": 7,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "AI & tasks",
+          "lines": 13,
+          "lineMonths": 31,
+          "durabilityUnits": 5.6
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 1,
+          "lineMonths": 2,
+          "durabilityUnits": 1.4
+        }
+      ]
+    },
+    "richard solomou": {
+      "name": "Richard Solomou",
+      "survivingLines": 11,
+      "lineMonths": 29,
+      "durableShare": 0.08,
+      "medianAgeDays": 81,
+      "durabilityRaw": 6.54,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "AI & tasks",
+          "lines": 10,
+          "lineMonths": 27,
+          "durabilityUnits": 5.18
+        },
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 1,
+          "lineMonths": 2,
+          "durabilityUnits": 1.36
+        }
+      ]
+    },
+    "sarah sanders": {
+      "name": "Sarah Sanders",
+      "survivingLines": 1,
+      "lineMonths": 1,
+      "durableShare": 0.01,
+      "medianAgeDays": 37,
+      "durabilityRaw": 1.11,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "AI & tasks",
+          "lines": 1,
+          "lineMonths": 1,
+          "durabilityUnits": 1.11
+        }
+      ]
+    },
+    "lucas ricoy": {
+      "name": "Lucas Ricoy",
+      "survivingLines": 4,
+      "lineMonths": 4,
+      "durableShare": 0.03,
+      "medianAgeDays": 30,
+      "durabilityRaw": 2,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 4,
+          "lineMonths": 4,
+          "durabilityUnits": 2
+        }
+      ]
+    },
+    "alex lebedev": {
+      "name": "Alex Lebedev",
+      "survivingLines": 3,
+      "lineMonths": 3,
+      "durableShare": 0.02,
+      "medianAgeDays": 31,
+      "durabilityRaw": 1.77,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "AI & tasks",
+          "lines": 3,
+          "lineMonths": 3,
+          "durabilityUnits": 1.77
+        }
+      ]
+    },
+    "meikel ratz": {
+      "name": "Meikel Ratz",
+      "survivingLines": 65,
+      "lineMonths": 111,
+      "durableShare": 0.44,
+      "medianAgeDays": 45,
+      "durabilityRaw": 12.12,
+      "episodeCount": 2,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "cdp",
+          "lines": 63,
+          "lineMonths": 108,
+          "durabilityUnits": 10.38
+        },
+        {
+          "month": "2026-07",
+          "scope": "workflows",
+          "lines": 2,
+          "lineMonths": 3,
+          "durabilityUnits": 1.75
+        }
+      ]
+    },
+    "abigail": {
+      "name": "Abigail",
+      "survivingLines": 38,
+      "lineMonths": 98,
+      "durableShare": 0.26,
+      "medianAgeDays": 78,
+      "durabilityRaw": 9.91,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-06",
+          "scope": "cdp",
+          "lines": 38,
+          "lineMonths": 98,
+          "durabilityUnits": 9.91
+        }
+      ]
+    },
+    "carlos marchal": {
+      "name": "Carlos Marchal",
+      "survivingLines": 5,
+      "lineMonths": 7,
+      "durableShare": 0.03,
+      "medianAgeDays": 45,
+      "durabilityRaw": 2.73,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-07",
+          "scope": "frontend platform",
+          "lines": 5,
+          "lineMonths": 7,
+          "durabilityUnits": 2.73
+        }
+      ]
+    },
+    "thiago salvatore": {
+      "name": "Thiago Salvatore",
+      "survivingLines": 9,
+      "lineMonths": 0,
+      "durableShare": 0.06,
+      "medianAgeDays": 1,
+      "durabilityRaw": 0.6,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-09",
+          "scope": "AI & tasks",
+          "lines": 9,
+          "lineMonths": 0,
+          "durabilityUnits": 0.6
+        }
+      ]
+    },
+    "matt pua": {
+      "name": "Matt Pua",
+      "survivingLines": 100,
+      "lineMonths": 77,
+      "durableShare": 0.68,
+      "medianAgeDays": 23,
+      "durabilityRaw": 8.78,
+      "episodeCount": 1,
+      "topEpisodes": [
+        {
+          "month": "2026-08",
+          "scope": "frontend platform",
+          "lines": 100,
+          "lineMonths": 77,
+          "durabilityUnits": 8.78
+        }
+      ]
+    }
+  }
+}

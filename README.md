@@ -6,10 +6,13 @@ A one-page, evidence-backed view of the five engineers creating the most sustain
 
 Raw activity is a poor proxy for impact, so the analysis groups related merged PRs by engineer, product area, and week into **impact arcs**. Each arc contributes—with diminishing returns—to four independently percentile-ranked dimensions:
 
-- **Product outcomes (35%)**: shipped or improved customer capability.
-- **Risk retired (30%)**: security, reliability, recovery, data integrity, and billing correctness.
-- **Team leverage (20%)**: performance, tooling, tests, docs, build, and delivery systems.
+- **Product outcomes (25%)**: shipped or improved customer capability.
+- **Risk retired (20%)**: security, reliability, recovery, data integrity, and billing correctness.
+- **Team leverage (15%)**: performance, tooling, tests, docs, build, and delivery systems.
 - **Sustained ownership (15%)**: returning to the same product area across multiple weeks, with a smaller breadth signal.
+- **Code durability (25%)**: current nonblank production lines last touched in the window, weighted by age and grouped into monthly product episodes with square-root diminishing returns.
+
+The durability analysis uses a deterministic sample of production files changed during the window. Tests, generated code, migrations, fixtures, and vendor code are excluded. The dashboard exposes the sample size and each leader's surviving-line share, median line age, and episode count.
 
 The model intentionally excludes lines changed, raw commit ranking, bots, dependency churn, and unmerged work. Public Git history cannot reliably expose mentorship, review quality, incident leadership, or invisible coordination; the UI names that limitation.
 

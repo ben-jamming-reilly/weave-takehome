@@ -6,7 +6,8 @@ type Signal = "risk" | "leverage" | "product";
 type Leader = {
   name: string;
   score: number;
-  dimensions: { customer: number; risk: number; leverage: number; ownership: number };
+  dimensions: { customer: number; risk: number; leverage: number; ownership: number; durability: number };
+  durabilityEvidence: { survivingLines: number; lineMonths: number; durableShare: number; medianAgeDays: number; episodeCount: number; topEpisodes: { month: string; scope: string; lines: number; lineMonths: number; durabilityUnits: number }[] };
   prs: number;
   impactArcs: number;
   activeWeeks: number;
@@ -19,7 +20,8 @@ type Leader = {
 export type Data = {
   window: { since: string; until: string; days: number };
   coverage: { commitsScanned: number; humanMergedPrs: number; engineersScored: number };
-  weights: { customer: number; risk: number; leverage: number; ownership: number };
+  weights: { customer: number; risk: number; leverage: number; ownership: number; durability: number };
+  survivalCoverage: { changedEligibleFiles: number; sampledFiles: number; filesBlamed: number; currentLinesScanned: number; survivingWindowLines: number; sampling: string };
   leaders: Leader[];
 };
 
@@ -28,6 +30,7 @@ const dimensionMeta = [
   { key: "risk" as const, label: "Risk retired", short: "Risk", color: "var(--pink)" },
   { key: "leverage" as const, label: "Team leverage", short: "Leverage", color: "var(--lime)" },
   { key: "ownership" as const, label: "Sustained ownership", short: "Ownership", color: "var(--blue)" },
+  { key: "durability" as const, label: "Code durability", short: "Durability", color: "var(--violet)" },
 ];
 
 function initials(name: string) {
@@ -41,7 +44,7 @@ function plainTitle(title: string) {
 function narrative(leader: Leader) {
   const strongest = [...dimensionMeta].sort((a, b) => leader.dimensions[b.key] - leader.dimensions[a.key])[0];
   const scope = leader.topScopes[0];
-  return `${strongest.label} is the clearest signal: ${leader.dimensions[strongest.key]}th percentile. ${leader.name.split(" ")[0]} sustained work in ${scope.scope} across ${scope.weeks} of 14 weeks, with evidence spanning ${leader.breadth} product areas.`;
+  return `${strongest.label} is the clearest signal: ${leader.dimensions[strongest.key]}th percentile. ${leader.name.split(" ")[0]} sustained work in ${scope.scope} across ${scope.weeks} of 14 weeks; ${leader.durabilityEvidence.survivingLines.toLocaleString()} sampled lines remain at HEAD.`;
 }
 
 export default function Dashboard({ data }: { data: Data }) {
@@ -71,7 +74,7 @@ export default function Dashboard({ data }: { data: Data }) {
           <p className="eyebrow">POSTHOG · GITHUB</p>
           <h1 id="page-title">Who moved the work<br /><em>that mattered?</em></h1>
         </div>
-        <p className="thesis">Impact is a sustained change in customer capability, system risk, or team velocity—not a pile of commits. Related PRs are grouped into weekly product arcs before scoring.</p>
+        <p className="thesis">Impact is shipped work that keeps creating value. PR outcomes are grouped into product arcs; surviving code earns more credit for every month it remains at HEAD.</p>
       </section>
 
       <section className="workspace">
@@ -115,6 +118,12 @@ export default function Dashboard({ data }: { data: Data }) {
             ))}
           </div>
 
+          <div className="durability-strip">
+            <div><strong>{leader.durabilityEvidence.survivingLines.toLocaleString()}</strong><span>sampled lines still live</span></div>
+            <div><strong>{leader.durabilityEvidence.durableShare}%</strong><span>of surviving 90-day code</span></div>
+            <div><strong>{leader.durabilityEvidence.medianAgeDays}d</strong><span>median line age</span></div>
+            <div><strong>{leader.durabilityEvidence.episodeCount}</strong><span>monthly code episodes</span></div>
+          </div>
           <div className="evidence-head"><h3>Proof, not proxy</h3><span>{leader.impactArcs} impact arcs · {leader.activeWeeks}/14 active weeks</span></div>
           <div className="evidence-list">
             {leader.evidence.slice(0, 3).map((item) => (
@@ -139,14 +148,14 @@ export default function Dashboard({ data }: { data: Data }) {
             <button className="modal-close" onClick={() => setMethodOpen(false)} aria-label="Close methodology">×</button>
             <p className="eyebrow">TRANSPARENT BY DESIGN</p>
             <h2 id="method-title">Impact, with receipts.</h2>
-            <p>Every merged PR from the 91-day window is classified from its title and product scope, then related work is collapsed into a weekly “impact arc.” This makes ten follow-up fixes count as one sustained outcome—not ten popularity points.</p>
+            <p>Every merged PR is classified and collapsed into a weekly product arc. A deterministic Git-blame sample then finds nonblank production lines introduced or last touched in the window that still exist at HEAD. Each line earns up to three line-months; monthly product episodes use a square root so code volume has diminishing returns.</p>
             <div className="method-grid">
               {dimensionMeta.map((dimension) => (
-                <div key={dimension.key}><strong style={{ color: dimension.color }}>{data.weights[dimension.key]}%</strong><h3>{dimension.label}</h3><p>{dimension.key === "customer" ? "New or improved product capability." : dimension.key === "risk" ? "Security, reliability, data integrity, and recovery." : dimension.key === "leverage" ? "Performance, tooling, tests, docs, and delivery systems." : "Repeat ownership of the same product area over time."}</p></div>
+                <div key={dimension.key}><strong style={{ color: dimension.color }}>{data.weights[dimension.key]}%</strong><h3>{dimension.label}</h3><p>{dimension.key === "customer" ? "New or improved product capability." : dimension.key === "risk" ? "Security, reliability, data integrity, and recovery." : dimension.key === "leverage" ? "Performance, tooling, tests, docs, and delivery systems." : dimension.key === "ownership" ? "Repeat ownership of the same product area over time." : "Age-weighted lines still present at HEAD, grouped into monthly product episodes."}</p></div>
               ))}
             </div>
-            <div className="formula">Within each dimension: arc signals → diminishing returns → percentile among {data.coverage.engineersScored} engineers → weighted score</div>
-            <p className="caveat"><strong>Intentionally excluded:</strong> lines changed, raw commit rank, bots, dependency churn, and unmerged work. Review quality, mentoring, and incident response are absent from public Git history, so the dashboard states that limitation instead of pretending to measure them.</p>
+            <div className="formula">Score = 25% outcome + 20% risk + 15% leverage + 15% ownership + 25% durability percentile</div>
+            <p className="caveat"><strong>Durability coverage:</strong> {data.survivalCoverage.sampledFiles} of {data.survivalCoverage.changedEligibleFiles.toLocaleString()} eligible changed production files; {data.survivalCoverage.currentLinesScanned.toLocaleString()} current nonblank lines inspected. This is a deterministic sample, not a claim that more code is inherently better. Deleted code can be excellent engineering; mentorship, reviews, and incident leadership remain unobserved.</p>
           </section>
         </div>
       )}
